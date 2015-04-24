@@ -3,7 +3,7 @@
 Implementation of some sorting algorithms, following
 algorithms are implemented:
 
-### BubleSort
+### BubleSort -- DONE -- 04/23
 ### MergeSort
 ### SlowSort
 ### HeapSort

@@ -7,19 +7,22 @@ import java.util.ArrayList;
 public class Test {
 	public static void main(String args[]) {
 		int cantElems = Integer.parseInt(args[0]);
-		ArrayList<Integer> elems = new ArrayList(cantElems);
+		ArrayList<Comparable> elems = new ArrayList(cantElems);
 		Random generator = new Random();
 		for (int i=0;i<cantElems;i++) 
 			elems.add(new Integer(generator.nextInt()));
 
-		elems = Sort.bubbleSort(elems);
-		System.out.println(elems.toString());
-		System.out.println("repOk: "+repOkOrd(elems));
+		//elems = Sort.bubbleSort(elems);
+		//System.out.println(elems.toString());
+		System.out.println("repOk: "+repOkOrd(Sort.bubbleSort(elems)));
 	}
-	public static boolean repOkOrd (ArrayList<Integer> arreglo){
+	/*
+	**returns true if and only if the input array is ordered increasingly
+	*/
+	public static boolean repOkOrd (ArrayList<Comparable> arreglo){
 		for (int i=0; i<(arreglo.size()-1) ; i++ ) 
-			if (arreglo.get(i)<arreglo.get(i+1))
+			if (0<(arreglo.get(i)).compareTo(arreglo.get(i+1)))
 				return false;
 		return true;
 	}
-}
+} 
